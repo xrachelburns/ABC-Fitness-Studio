@@ -23,8 +23,9 @@ h2 { font-size:clamp(1.7rem,3vw,2.5rem); letter-spacing:-.035em; }
 button:hover,button:focus-visible,.button:hover,.button:focus-visible { filter:brightness(.9); transform:translateY(-1px); }
 .section-heading { max-width:650px; margin-bottom:28px; }
 .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.service-grid article { min-height:210px; padding:26px; background:white; border:1px solid var(--line); border-top:5px solid var(--blue); }
-.service-icon { display:block; margin-bottom:28px; color:var(--blue); font-weight:900; }
+.service-grid article { overflow:hidden; min-height:340px; padding:0; background:white; border:1px solid var(--line); border-top:5px solid var(--blue); }
+.service-grid article>img { display:block; width:100%; height:180px; object-fit:cover; }.service-copy { padding:22px 24px; }
+.service-icon { display:block; margin-bottom:10px; color:var(--blue); font-weight:900; }
 .gallery-section>p:nth-of-type(2) { max-width:590px; margin-bottom:36px; }
 table { width:100%; border-collapse:separate; border-spacing:16px; table-layout:fixed; }
 td { padding:24px; vertical-align:top; background:white; border:1px solid var(--line); }
@@ -33,7 +34,8 @@ td { padding:24px; vertical-align:top; background:white; border:1px solid var(--
 .memberships-section { padding-top:48px; border-top:1px solid var(--line); }.memberships-section>h2 { text-align:center; }
 .plan-grid td { position:relative; padding-bottom:82px; }.plan-grid td:nth-child(2) { border:3px solid var(--blue); }.plan-grid button { position:absolute; bottom:24px; left:24px; right:24px; width:calc(100% - 48px); }.plan-grid li { margin-bottom:8px; }
 .benefits { padding:28px; background:var(--lime); }.benefits h2 { font-size:1.5rem; }.benefits ul { columns:2; }
-.about-intro { max-width:850px; padding:70px; background:var(--sky); }.about-intro p { max-width:660px; font-size:1.1rem; }.about-intro h1 { font-size:clamp(2.5rem,5vw,4.5rem); }
+.page-banner { display:grid; grid-template-columns:1.05fr 1fr; align-items:center; overflow:hidden; margin-bottom:38px; color:white; background:var(--ink); }.page-banner img { display:block; width:100%; min-height:360px; height:100%; object-fit:cover; }.page-banner div { padding:44px; }.page-banner h1 { margin-bottom:18px; }.page-banner .eyebrow { color:var(--lime); }
+.about-intro { display:grid; grid-template-columns:1.1fr .9fr; max-width:none; padding:0; background:var(--sky); }.about-intro>div { padding:60px; }.about-intro>img { width:100%; height:100%; min-height:460px; object-fit:cover; }.about-intro p { max-width:660px; font-size:1.1rem; }.about-intro h1 { font-size:clamp(2.5rem,5vw,4.5rem); }
 .contact-section { display:grid; grid-template-columns:2fr 1fr; gap:48px; }.contact-section h2 { font-size:3rem; }
 form label { display:block; margin-bottom:16px; font-size:.85rem; font-weight:800; }.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 input,textarea { display:block; width:100%; margin-top:6px; padding:12px; color:var(--ink); background:white; border:1px solid #8a95a8; font:inherit; }.contact-card { padding:32px; background:var(--ink); color:white; }.contact-card a { color:var(--lime); }.contact-card hr { margin:28px 0; border:0; border-top:1px solid #62708a; }
@@ -43,7 +45,7 @@ footer { padding:28px 20px; text-align:center; color:white; background:var(--ink
     .site-header { padding-inline:14px; } nav { grid-template-columns:1fr 1fr; } nav a:nth-child(2) { border-right:0; } nav a:nth-child(-n+2) { border-bottom:1px solid var(--line); }
     main { padding-inline:14px; }.hero { padding:54px 26px; border-radius:0 0 45px 0; }.service-grid { grid-template-columns:1fr 1fr; }
     table,tbody,tr,td { display:block; }.product-grid tr,.class-grid tr { display:grid; grid-template-columns:1fr 1fr; }.product-grid td,.class-grid td { margin:8px; }.plan-grid td { margin-bottom:16px; }
-    .contact-section { grid-template-columns:1fr; }.about-intro { padding:42px 25px; }.benefits ul { columns:1; }
+    .contact-section,.page-banner,.about-intro { grid-template-columns:1fr; }.page-banner img { min-height:260px; }.page-banner div { padding:32px 26px; }.about-intro>div { padding:42px 25px; }.about-intro>img { min-height:300px; }.benefits ul { columns:1; }
     .footer-nav { display:flex; flex-wrap:wrap; grid-template-columns:none; }.footer-nav a,.footer-nav a:nth-child(-n+2) { border:0; }
 }
 @media (max-width:480px) { .service-grid,.product-grid tr,.class-grid tr,.form-row { grid-template-columns:1fr; } .brand { font-size:1.25rem; } }
