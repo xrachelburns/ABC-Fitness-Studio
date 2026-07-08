@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC Fitness Studio | Gallery</title>
     <link rel="stylesheet" href="css/styles.css?v=20260708-4">
+    <script src="js/script.js?v=20260708-1" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -22,6 +23,11 @@
             <p>You can also browse ABC Fitness Studio apparel and equipment designed to help you stay comfortable, hydrated, and ready to train.</p>
         </div>
 
+        <div class="cart-actions" aria-label="Shopping cart actions">
+            <button id="clear-cart" type="button">Clear Cart</button>
+            <button id="process-order" type="button">Process Order</button>
+        </div>
+
         <table class="product-grid">
             <tr>
                 <td>
@@ -29,21 +35,21 @@
                     <img src="images/Client2_GroupKickboxing.png?v=20260708-4" alt="Group kickboxing class">
                     <p class="item-description">An energetic full-body class combining cardio, strength, and supportive coaching.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Group Pilates</h2>
                     <img src="images/Client2_GroupPilates.png?v=20260708-4" alt="Group Pilates class">
                     <p class="item-description">Build core strength, flexibility, and control in a motivating group setting.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Group Yoga</h2>
                     <img src="images/Client2_GroupYoga.png?v=20260708-4" alt="Group yoga class">
                     <p class="item-description">Improve balance and mobility while moving and breathing with the community.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
             </tr>
             <tr>
@@ -52,21 +58,21 @@
                     <img src="images/Client2_IndividualKickboxing.png?v=20260708-4" alt="Individual kickboxing training">
                     <p class="item-description">Personalized technique, conditioning, and goal-focused coaching at your pace.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Individual Pilates</h2>
                     <img src="images/Client2_IndividualPilates.png?v=20260708-4" alt="Individual Pilates training">
                     <p class="item-description">A private session tailored to your posture, strength, and movement goals.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Individual Yoga</h2>
                     <img src="images/Client2_IndividualYoga.png?v=20260708-4" alt="Individual yoga training">
                     <p class="item-description">One-on-one guidance for a safe, restorative, and personalized practice.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
             </tr>
             <tr>
@@ -75,21 +81,21 @@
                     <img src="images/Client2_TeeShirt.png?v=20260708-4" alt="ABC Fitness Studio T-shirt">
                     <p class="item-description">A comfortable studio T-shirt for workouts, recovery days, and everyday wear.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Water Bottle</h2>
                     <img src="images/Client2_WaterBottle.png?v=20260708-4" alt="ABC Fitness Studio water bottle">
                     <p class="item-description">A reusable bottle that keeps hydration close throughout every workout.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
                 <td>
                     <h2>Yoga Mat</h2>
                     <img src="images/Client2_YogaMat.png?v=20260708-4" alt="ABC Fitness Studio yoga mat">
                     <p class="item-description">A supportive, non-slip surface for yoga, stretching, and floor exercises.</p>
                     <br>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart" type="button">Add to Cart</button>
                 </td>
             </tr>
         </table>
@@ -97,7 +103,7 @@
 </main>
 
 <footer>
-    <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="memberships.html">Classes &amp; Memberships</a><a href="about.html">About &amp; Contact</a></nav><p>&copy; 2026 ABC Fitness Studio. All Rights Reserved.</p><p>123 Fitness Way, Chicago, IL 60601 &nbsp;|&nbsp; (555) 123-4567</p>
+    <div class="subscribe"><h2>Stay connected</h2><p>Get studio news, class updates, and wellness tips.</p><div class="subscribe-controls"><label for="subscribe-email-gallery">Email address</label><input id="subscribe-email-gallery" type="email" placeholder="you@example.com"><button class="subscribe-button" type="button">Subscribe</button></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="memberships.html">Classes &amp; Memberships</a><a href="about.html">About &amp; Contact</a></nav><p>&copy; 2026 ABC Fitness Studio. All Rights Reserved.</p><p>123 Fitness Way, Chicago, IL 60601 &nbsp;|&nbsp; (555) 123-4567</p>
 </footer>
 </body>
 </html>

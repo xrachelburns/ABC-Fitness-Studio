@@ -29,6 +29,7 @@ button:hover,button:focus-visible,.button:hover,.button:focus-visible { filter:b
 table { width:100%; border-collapse:separate; border-spacing:16px; table-layout:fixed; }
 td { padding:24px; vertical-align:top; background:white; border:1px solid var(--line); }
 .gallery-intro { max-width:900px; margin:26px 0 38px; padding:28px 32px; background:var(--lime); border-left:6px solid var(--blue); }.gallery-intro h2 { margin-bottom:12px; font-size:1.7rem; }.gallery-intro p:last-child { margin-bottom:0; }
+.cart-actions { display:flex; justify-content:flex-end; gap:12px; margin:0 16px 8px; }.cart-actions #clear-cart { color:var(--ink); background:var(--sky); }.cart-actions #process-order { color:var(--ink); background:var(--lime); }
 .product-grid td { text-align:center; }.product-grid h2 { font-size:1.05rem; }.product-grid img { width:100%; aspect-ratio:4/3; object-fit:cover; margin:8px 0 16px; background:#eef2f7; }.item-description { min-height:72px; color:#536078; font-size:.92rem; }
 .class-grid td { text-align:center; }.class-grid h3 { min-height:48px; }.class-grid button { margin-top:12px; }
 .memberships-section { padding-top:48px; border-top:1px solid var(--line); }.memberships-section>h2 { text-align:center; }
@@ -39,12 +40,12 @@ td { padding:24px; vertical-align:top; background:white; border:1px solid var(--
 form label { display:block; margin-bottom:16px; font-size:.85rem; font-weight:800; }.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 input,textarea { display:block; width:100%; margin-top:6px; padding:12px; color:var(--ink); background:white; border:1px solid #8a95a8; font:inherit; }.contact-card { padding:32px; background:var(--ink); color:white; }.contact-card a { color:var(--lime); }.contact-card hr { margin:28px 0; border:0; border-top:1px solid #62708a; }
 .checkbox-label { display:flex; align-items:center; gap:10px; }.checkbox-label input { width:auto; margin:0; }
-footer { padding:28px 20px; text-align:center; color:white; background:var(--ink); font-size:.85rem; } footer p { margin:4px; }.footer-nav { display:flex; justify-content:center; gap:22px; max-width:720px; margin:0 auto 18px; border:0; background:transparent; }.footer-nav a { min-height:auto; padding:0; border:0; color:white; font-size:.8rem; text-decoration:underline; }.footer-nav a:hover,.footer-nav a:focus-visible { color:var(--lime); background:transparent; }
+footer { padding:38px 20px 28px; text-align:center; color:white; background:var(--ink); font-size:.85rem; } footer p { margin:4px; }.subscribe { max-width:620px; margin:0 auto 30px; }.subscribe h2 { margin-bottom:4px; color:white; font-size:1.35rem; }.subscribe>p { margin-bottom:14px; color:#dbe4f2; }.subscribe-controls { display:grid; grid-template-columns:auto minmax(190px,1fr) auto; align-items:end; gap:10px; }.subscribe-controls label { text-align:left; font-weight:700; }.subscribe-controls input { margin:5px 0 0; border:0; }.subscribe-controls button { min-height:48px; color:var(--ink); background:var(--lime); }.footer-nav { display:flex; justify-content:center; gap:22px; max-width:720px; margin:0 auto 18px; border:0; background:transparent; }.footer-nav a { min-height:auto; padding:0; border:0; color:white; font-size:.8rem; text-decoration:underline; }.footer-nav a:hover,.footer-nav a:focus-visible { color:var(--lime); background:transparent; }
 @media (max-width:760px) {
     .site-header { padding-inline:14px; } nav { grid-template-columns:1fr 1fr; } nav a:nth-child(2) { border-right:0; } nav a:nth-child(-n+2) { border-bottom:1px solid var(--line); }
     main { padding-inline:14px; }.hero { padding:54px 26px; border-radius:0 0 45px 0; }.service-grid { grid-template-columns:1fr 1fr; }
     table,tbody,tr,td { display:block; }.product-grid tr,.class-grid tr { display:grid; grid-template-columns:1fr 1fr; }.product-grid td,.class-grid td { margin:8px; }.plan-grid td { margin-bottom:16px; }
     .contact-section { grid-template-columns:1fr; }.about-intro { padding:42px 25px; }.benefits ul { columns:1; }
-    .footer-nav { display:flex; flex-wrap:wrap; grid-template-columns:none; }.footer-nav a,.footer-nav a:nth-child(-n+2) { border:0; }
+    .subscribe-controls { grid-template-columns:1fr; }.subscribe-controls button { width:100%; }.footer-nav { display:flex; flex-wrap:wrap; grid-template-columns:none; }.footer-nav a,.footer-nav a:nth-child(-n+2) { border:0; }
 }
 @media (max-width:480px) { .service-grid,.product-grid tr,.class-grid tr,.form-row { grid-template-columns:1fr; } .brand { font-size:1.25rem; } }
