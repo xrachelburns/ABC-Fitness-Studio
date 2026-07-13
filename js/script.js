@@ -23,120 +23,125 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ---------------- Shopping Cart ----------------
+    const viewCartButton = document.querySelector("#view-cart");
+    const cartModal = document.querySelector("#cart-modal");
+    const cartItems = document.querySelector("#cart-items");
+    const cartTotal = document.querySelector(".cart-total");
+    const closeCartButton = document.querySelector("#close-cart");
+    const clearCartButton = document.querySelector("#clear-cart");
+    const processOrderButton = document.querySelector("#process-order");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    function updateCartUI() {
+        cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+        if (viewCartButton) {
+            const cartLabel = viewCartButton.querySelector(".cart-button-label");
+            const cartBadge = viewCartButton.querySelector(".cart-count");
+
+            if (cartLabel) {
+                cartLabel.textContent = "View Cart";
+            }
+
+            if (cartBadge) {
+                cartBadge.textContent = cart.length;
+            }
+        }
+    }
+
+    function renderCart() {
+        cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+        if (!cartItems) {
+            return;
+        }
+
+        cartItems.innerHTML = "";
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = "<li>Your cart is empty.</li>";
+
+            if (cartTotal) {
+                cartTotal.innerHTML = "";
+            }
+
+            return;
+        }
+
+        cart.forEach((item) => {
+            const li = document.createElement("li");
+            li.innerHTML = `<span>${item.name}</span><span>$${Number(item.price || 0).toFixed(2)}</span>`;
+            cartItems.appendChild(li);
+        });
+
+        if (cartTotal) {
+            const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
+            cartTotal.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+        }
+    }
+
+    function openCart() {
+        renderCart();
+
+        if (cartModal) {
+            cartModal.hidden = false;
+        }
+    }
 
     addToCartButtons.forEach((button) => {
         button.addEventListener("click", () => {
-
-            const product =
-                button.parentElement.querySelector("h2").textContent;
+            const product = button.parentElement.querySelector("h2").textContent;
             const price = productPrices[product] || 0;
 
             cart.push({ name: product, price: price });
-
             sessionStorage.setItem("cart", JSON.stringify(cart));
+            updateCartUI();
 
             alert("Item added to the cart.");
         });
     });
 
-    // View Cart
-    const viewCartButton = document.querySelector("#view-cart");
-
     if (viewCartButton) {
-
-        viewCartButton.addEventListener("click", () => {
-
-            const cartItems = document.querySelector("#cart-items");
-
-            cartItems.innerHTML = "";
-
-            cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-            if (cart.length === 0) {
-
-                cartItems.innerHTML = "<li>Your cart is empty.</li>";
-
-            } else {
-
-                cart.forEach((item) => {
-
-                    const li = document.createElement("li");
-
-                    li.innerHTML = `<span>${item.name}</span><span>$${item.price}</span>`;
-
-                    cartItems.appendChild(li);
-
-                });
-
-            }
-
-            // Calculate and display total
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            let totalElement = document.querySelector(".cart-total");
-            
-            if (!totalElement) {
-                totalElement = document.createElement("div");
-                totalElement.className = "cart-total";
-                document.querySelector("#cart-items").parentElement.insertBefore(totalElement, document.querySelector("#cart-items").nextSibling);
-            }
-            
-            if (cart.length > 0) {
-                totalElement.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
-            } else {
-                totalElement.innerHTML = "";
-            }
-
-            document.querySelector("#cart-modal").hidden = false;
-
-        });
-
+        viewCartButton.addEventListener("click", openCart);
     }
-
-    // Close Cart
-    const closeCartButton = document.querySelector("#close-cart");
 
     if (closeCartButton) {
-
         closeCartButton.addEventListener("click", () => {
-
-            document.querySelector("#cart-modal").hidden = true;
-
+            if (cartModal) {
+                cartModal.hidden = true;
+            }
         });
-
     }
-
-    const clearCartButton = document.querySelector("#clear-cart");
 
     if (clearCartButton) {
         clearCartButton.addEventListener("click", () => {
             cart = [];
             sessionStorage.removeItem("cart");
-
-            if (cartItems) {
-                cartItems.innerHTML = "<li>Your cart is empty.</li>";
-            }
-
+            updateCartUI();
+            renderCart();
             alert("Cart cleared.");
         });
     }
-
-    const processOrderButton = document.querySelector("#process-order");
 
     if (processOrderButton) {
         processOrderButton.addEventListener("click", () => {
             cart = [];
             sessionStorage.removeItem("cart");
-
-            if (cartItems) {
-                cartItems.innerHTML = "<li>Your cart is empty.</li>";
-            }
-
+            updateCartUI();
+            renderCart();
             alert("Thank you for your order.");
         });
     }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && cartModal && !cartModal.hidden) {
+            cartModal.hidden = true;
+        }
+    });
+
+    updateCartUI();
 
     const contactForm = document.querySelector("#contact-form");
 

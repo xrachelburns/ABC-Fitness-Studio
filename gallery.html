@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light only">
     <title>ABC Fitness Studio | Gallery</title>
-    <link rel="stylesheet" href="css/styles.css?v=20260708-5">
-    <script src="js/script.js?v=20260712-1" defer></script>
+    <link rel="stylesheet" href="css/styles.css?v=20260713-1">
+    <script src="js/script.js?v=20260713-1" defer></script>
 </head>
 <body>
 <header class="site-header">
     <a class="brand" href="index.html" aria-label="ABC Fitness Studio home"><span class="brand-mark">ABC</span> Fitness Studio</a>
     <nav aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="gallery.html">Gallery</a><a href="memberships.html">Classes &amp; Memberships</a><a href="about.html">About &amp; Contact</a></nav>
+    <div class="header-tools">
+        <button id="view-cart" class="cart-button" type="button"><span class="cart-button-label">View Cart</span><span class="cart-count">0</span></button>
+    </div>
 </header>
 
 <main>
     <section class="gallery-section">
         <p class="eyebrow">Studio essentials</p><h1>Gallery</h1>
         <p>Browse fitness products and wellness items available through ABC Fitness Studio.</p>
-<div class="cart-actions" aria-label="Shopping cart actions">
-    <button id="view-cart" type="button">View Cart</button>
-    <button id="clear-cart" type="button">Clear Cart</button>
-    <button id="process-order" type="button">Process Order</button>
-</div>
 
         <table class="product-grid">
             <tr>
@@ -95,20 +93,25 @@
                 </td>
             </tr>
         </table>
-    </section> 
-    <div id="cart-modal" class="cart-modal" hidden>
-    <div class="cart-modal-content" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-        <h2 id="cart-title">Your Shopping Cart</h2>
-
-        <ul id="cart-items"></ul>
-
-        <button id="close-cart" type="button">Close</button>
-    </div>
-</div>
+    </section>
 </main>
 
 <footer>
     <div class="subscribe"><h2>Stay connected</h2><p>Get studio news, class updates, and wellness tips.</p><div class="subscribe-controls"><label for="subscribe-email-gallery">Email address</label><input id="subscribe-email-gallery" type="email" placeholder="you@example.com"><button class="subscribe-button" type="button">Subscribe</button></div></div><nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="memberships.html">Classes &amp; Memberships</a><a href="about.html">About &amp; Contact</a></nav><p>&copy; 2026 ABC Fitness Studio. All Rights Reserved.</p><p>123 Fitness Way, Chicago, IL 60601 &nbsp;|&nbsp; (555) 123-4567</p>
 </footer>
+<div id="cart-modal" class="cart-modal" hidden>
+    <div class="cart-modal-content" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="cart-modal-header">
+            <h2 id="cart-title">Your Shopping Cart</h2>
+            <button id="close-cart" type="button">Close</button>
+        </div>
+        <ul id="cart-items"></ul>
+        <div class="cart-total" aria-live="polite"></div>
+        <div class="cart-actions-row">
+            <button id="clear-cart" type="button">Clear Cart</button>
+            <button id="process-order" type="button">Checkout</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
