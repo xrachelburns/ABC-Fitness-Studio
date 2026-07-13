@@ -18,16 +18,11 @@
     <section class="gallery-section">
         <p class="eyebrow">Studio essentials</p><h1>Gallery</h1>
         <p>Browse fitness products and wellness items available through ABC Fitness Studio.</p>
-        <div class="gallery-intro">
-            <h2>Move with confidence. Feel your best.</h2>
-            <p>Choose the energy of a group class or the focused attention of an individual session. Our kickboxing, Pilates, and yoga programs welcome beginners and experienced members alike.</p>
-            <p>You can also browse ABC Fitness Studio apparel and equipment designed to help you stay comfortable, hydrated, and ready to train.</p>
-        </div>
-
-        <div class="cart-actions" aria-label="Shopping cart actions">
-            <button id="clear-cart" type="button">Clear Cart</button>
-            <button id="process-order" type="button">Process Order</button>
-        </div>
+<div class="cart-actions" aria-label="Shopping cart actions">
+    <button id="view-cart" type="button">View Cart</button>
+    <button id="clear-cart" type="button">Clear Cart</button>
+    <button id="process-order" type="button">Process Order</button>
+</div>
 
         <table class="product-grid">
             <tr>
@@ -100,7 +95,16 @@
                 </td>
             </tr>
         </table>
-    </section>
+    </section> 
+    <div id="cart-modal" class="cart-modal" hidden>
+    <div class="cart-modal-content" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <h2 id="cart-title">Your Shopping Cart</h2>
+
+        <ul id="cart-items"></ul>
+
+        <button id="close-cart" type="button">Close</button>
+    </div>
+</div>
 </main>
 
 <footer>
