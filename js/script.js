@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sessionStorage.removeItem("cart");
             updateCartUI();
             renderCart();
-            alert("Thank you for your order.");
+            alert("Order placed successfully! Thank you for shopping with ABC Fitness Studio.");
         });
     }
 
