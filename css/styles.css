@@ -3,10 +3,10 @@
 html { scroll-behavior:smooth; font-size:18px; background:var(--paper); }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial, Helvetica, sans-serif; line-height:1.6; text-rendering:optimizeLegibility; }
 a { color:inherit; }
-.site-header { position:relative; max-width:1180px; margin:auto; padding:28px 24px 0; }
-.brand { display:block; width:max-content; margin:0 auto 24px; text-decoration:none; font-size:1.55rem; font-weight:800; letter-spacing:-.03em; }
+.site-header { position:relative; max-width:1180px; margin:auto; padding:28px 24px 0; display:grid; grid-template-columns:auto 1fr auto; align-items:center; column-gap:24px; }
+.brand { display:block; width:max-content; margin:0; text-decoration:none; font-size:1.55rem; font-weight:800; letter-spacing:-.03em; }
 .brand-mark { display:inline-grid; place-items:center; width:48px; height:48px; margin-right:8px; color:white; background:var(--blue); border-radius:50%; font-size:.75rem; letter-spacing:.08em; }
-nav { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); background:white; }
+nav { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); background:white; width:100%; }
 nav a { display:grid; place-items:center; min-height:52px; padding:8px; text-align:center; text-decoration:none; font-size:.9rem; font-weight:700; border-right:1px solid var(--line); }
 nav a:last-child { border-right:0; }
 nav a:hover, nav a:focus-visible, nav a.active { color:white; background:var(--blue); }
