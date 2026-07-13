@@ -154,13 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 lastName: contactForm.querySelector("#last-name")?.value || "",
                 email: contactForm.querySelector("#email")?.value || "",
                 phone: contactForm.querySelector("#phone")?.value || "",
+                customOrder: contactForm.querySelector("#custom-order")?.checked || false,
                 message: contactForm.querySelector("#message")?.value || ""
             };
 
-            localStorage.setItem(
-                "customerInformation",
-                JSON.stringify(customerInformation)
-            );
+            localStorage.setItem("customerInformation", JSON.stringify(customerInformation));
 
             alert("Thank you for your message.");
         });
