@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Product pricing
+    const productPrices = {
+        "Group Kickboxing": 30,
+        "Group Pilates": 28,
+        "Group Yoga": 25,
+        "Individual Kickboxing": 75,
+        "Individual Pilates": 65,
+        "Individual Yoga": 60,
+        "ABC Fitness T-Shirt": 20,
+        "Water Bottle": 18,
+        "Yoga Mat": 35
+    };
+
     // ---------------- Subscribe ----------------
     const subscribeButtons = document.querySelectorAll(".subscribe-button");
     subscribeButtons.forEach((button) => {
@@ -18,8 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const product =
                 button.parentElement.querySelector("h2").textContent;
+            const price = productPrices[product] || 0;
 
-            cart.push(product);
+            cart.push({ name: product, price: price });
 
             sessionStorage.setItem("cart", JSON.stringify(cart));
 
@@ -50,12 +64,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const li = document.createElement("li");
 
-                    li.textContent = item;
+                    li.innerHTML = `<span>${item.name}</span><span>$${item.price}</span>`;
 
                     cartItems.appendChild(li);
 
                 });
 
+            }
+
+            // Calculate and display total
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            let totalElement = document.querySelector(".cart-total");
+            
+            if (!totalElement) {
+                totalElement = document.createElement("div");
+                totalElement.className = "cart-total";
+                document.querySelector("#cart-items").parentElement.insertBefore(totalElement, document.querySelector("#cart-items").nextSibling);
+            }
+            
+            if (cart.length > 0) {
+                totalElement.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
+            } else {
+                totalElement.innerHTML = "";
             }
 
             document.querySelector("#cart-modal").hidden = false;
